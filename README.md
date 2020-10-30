@@ -4,9 +4,25 @@
 
 # Henry
 
+El proyecto fue realizado con las tecnologias aprendidas en el Bootcamp. 
+
+FRONT-END
+
+- React
+- Redux
+- Sass
+
+BACK-END
+
+- Node
+- Express
+- Sequelize
+- Postrges
+- Passport (Autenticación)
+
 ## BoilerPlate
 
-El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
+El boilerplate cuenta con dos carpetas: `api` y `client`.
 
 En `api` vas a tener que crear un archivo llamado: `.env` que tenga la siguiente forma:
 
