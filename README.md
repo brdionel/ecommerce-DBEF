@@ -20,7 +20,7 @@ BACK-END
 - Postrges
 - Passport (Autenticación)
 
-![Ver demo](https://res.cloudinary.com/dtnixnyfz/video/upload/v1604033110/gif_ecommerce_ipp4td.mp4)
+![Ver demo](https://res.cloudinary.com/dtnixnyfz/image/upload/v1604034443/wJFNTikPMD_jmyxcb.gif)
 
 ## BoilerPlate
 
