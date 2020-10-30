@@ -1,0 +1,75 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.wrapper {
+    max-width: 1200px;
+    width: '100%';
+    margin: 30px auto;
+    padding: 20px;
+}
+  
+.wrapperContent {
+    //  @mixin flex($direction: row, $justify: center, $align: center)
+    @include flex ($justify: space-evenly, )
+}
+  
+.image {
+    max-width: 600px;
+    min-width: 500px;
+    width: 100%;
+}
+  
+.addCartButton {
+    color : $light;
+    background-color: $info;
+    margin-right: 10px;
+}
+
+.starFill {
+    @include font($warning, 2em);
+    &:hover {
+        cursor: pointer;
+    }
+    
+}
+
+.starEmpty {
+    @include font($secondary, 2em);
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.liscore {
+    list-style: none;
+}
+
+.wrapperReview {
+    //  @mixin flex($direction: row, $justify: center, $align: center)
+     @include flex($direction: column, $align: '')
+}
+
+.plus {
+    font-size: 1em;
+    &:hover {
+        cursor: pointer;
+        color: $secondary;
+    }
+}
+
+.opinions {
+    @include flex($justify: space-between)
+}
+
+.reviews {
+    @include borderer(#eee, 1px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #eee;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10.4px rgba(0, 0, 0, 0.086);
+}
+
+.promedio {
+    @include font ($color: $warning, $font-size: 1rem, $font-weight: 600);
+}

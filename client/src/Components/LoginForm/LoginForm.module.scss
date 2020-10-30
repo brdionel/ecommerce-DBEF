@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+
+.wrapperLogin{
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid $primary;
+    border-radius: .5rem;
+    padding: 4rem;
+    box-shadow: 0 0.0625rem 0.125rem 0 $primary;
+    background-color: $light;
+    position: relative;
+    top: -130px;
+}
+
+.textForm {
+    font-size: 16px;
+    font-weight: 600;
+}

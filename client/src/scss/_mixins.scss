@@ -1,0 +1,15 @@
+@mixin borderer($color, $width) {
+    border: $width solid $color;
+}
+
+@mixin font ($color, $font-size, $font-weight: 400, $font-style: normal, $font-family: 'Open sans') {
+    color: $color;
+    font: $font-style $font-weight $font-size $font-family;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

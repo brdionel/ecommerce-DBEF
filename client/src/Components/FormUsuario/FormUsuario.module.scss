@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+
+.wrapperForm {
+    max-width: 800px;
+    width: 100%;
+    padding: 3rem;
+    border: 1px solid $primary;
+    border-radius: .5rem;
+    padding: 4rem;
+    box-shadow: 0 0.0625rem 0.125rem 0 $dark;
+    background-color: $light;
+    margin: 2rem auto;
+}
+
+.textForm {
+    font-size: 16px;
+    font-weight: 600;
+}
