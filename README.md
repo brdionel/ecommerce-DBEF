@@ -145,3 +145,9 @@ Este proyecto tiene muchas tareas para realizar, asi que es fácil sentirse abru
     + Los usuarios pueden hacer el checkout.
     + Los admins pueden ver las ordenes pendientes.
     + Los usuarios reciben mails de notificaciones.
+    
+## Contribuidores
+
+- [Franco Silva](https://github.com/francoderweb)
+- [Dayamar Martinez](https://github.com/dayamartinez)
+- [Ezequiel Diaz](https://github.com/EzequielDiaz1)
