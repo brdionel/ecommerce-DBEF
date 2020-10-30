@@ -20,6 +20,8 @@ BACK-END
 - Postrges
 - Passport (Autenticación)
 
+![Ver demo](C:\Users\Bruno\Downloads\gifecommerce.gif)
+
 ## BoilerPlate
 
 El boilerplate cuenta con dos carpetas: `api` y `client`.
