@@ -12,8 +12,6 @@
 - Aprender y practicar el workflow de GIT.
 - Utilizar Metodologías Ágiles.
 - Trabajar en equipo.
-- Usar y practicar testing.
-- Deployar la aplicación y entender el proceso de Deployment.
 
 ## Trabajo en Equipo
 
