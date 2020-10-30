@@ -11,6 +11,7 @@ FRONT-END
 - React
 - Redux
 - Sass
+- Bootstrap
 
 BACK-END
 
