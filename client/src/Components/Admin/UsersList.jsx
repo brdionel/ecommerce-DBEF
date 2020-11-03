@@ -1,9 +1,10 @@
 import React from 'react'
-import { removeUser, promoteToAdmin, resetPassword } from '../../actions'
+// import { removeUser, promoteToAdmin, resetPassword } from '../../actions'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import swal from 'sweetalert'
 import { useHistory } from 'react-router-dom'
+import { removeUser, promoteToAdmin, resetPassword } from '../../stores/actions/userActions'
 
 export function UsersList({users,removeUser,promoteToAdmin,resetPassword,userLogged}) {
 
@@ -136,11 +137,16 @@ export function UsersList({users,removeUser,promoteToAdmin,resetPassword,userLog
 	)
 }
 
-const mapStateToProps = (state) => ({
-	users: state.users,
-	userDetail: state.userDetail,
-	userLogged : state.userLogged
-})
+const mapStateToProps = (state) => {
+	const { userReducer } = state;
+
+	return{
+		users: userReducer.users,
+		userDetail: userReducer.userDetail,
+		userLogged : userReducer.userLogged
+	}
+}
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		removeUser: (id) => dispatch(removeUser(id)),

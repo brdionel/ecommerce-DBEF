@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
-import { userLogin } from '../../actions'
+import { userLogin } from '../../stores/actions/userActions'
 import swal from 'sweetalert'
 import styles from './LoginForm.module.scss' 
 
@@ -77,9 +77,13 @@ function LoginForm({ userLogin, user, setProductsUser, cartGuest }) {
   )
 }
 
-const mapStateToProps = (state) => ({
-  user: state.userLogged,
-})
+const mapStateToProps = (state) => {
+  const { userReducer } = state;
+  
+  return {
+    user: userReducer.userLogged,
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {

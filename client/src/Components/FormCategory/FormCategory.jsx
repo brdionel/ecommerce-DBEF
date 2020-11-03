@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../StyleForm.css'
-import { addCategory, removeCategory } from '../../actions'
+import { addCategory, removeCategory } from '../../stores/actions/categoryActions'
 import { connect } from 'react-redux'
 import swal from 'sweetalert'
 import { useHistory } from 'react-router-dom'
@@ -150,11 +150,14 @@ export function FormCategory({ match, addCategory, removeCategory, userLogged })
 	)
 }
 
-const mapStateToProps = (state) => ({
-	products: state.products,
-	categories: state.categories,
-	userLogged : state.userLogged
-})
+const mapStateToProps = (state) => {
+	const { productReducer, categoryReducer, userReducer} = state;
+	return {
+		products: productReducer.products,
+		categories: categoryReducer.categories,
+		userLogged : userReducer.userLogged
+	}
+}
 
 const mapDispatchToProps = (dispatch) => {
 	return {

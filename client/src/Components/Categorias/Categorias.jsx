@@ -29,7 +29,7 @@ const Categorias = ({ categories }) => (
   )
 
 const mapStateToProps = (state) => ({
-  categories: state.categories,
+  categories: state.categoryReducer.categories,
 })
 
 export default connect(mapStateToProps)(Categorias)

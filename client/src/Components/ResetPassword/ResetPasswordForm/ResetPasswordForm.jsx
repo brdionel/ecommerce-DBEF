@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { userChangePassword, userLogout } from '../../../actions'
+import { userChangePassword, userLogout } from '../../../stores/actions/userActions'
 import swal from 'sweetalert'
 
 export function ResetPasswordForm({ user, userChangePassword, userLogout }) {
@@ -130,9 +130,12 @@ export function ResetPasswordForm({ user, userChangePassword, userLogout }) {
 		</div>
 	) : null
 }
-const mapStateToProps = (state) => ({
-	user: state.userLogged,
-})
+const mapStateToProps = (state) => {
+	const { userReducer } = state;
+	return {
+		user: userReducer.userLogged,
+	}
+}
 
 const mapDispatchToProps = (dispatch) => {
 	return {

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getProductDetail, addProductCart, addReviews, addProductCartGuest} from '../../actions'
+// import { getProductDetail, addProductCart, addReviews, addProductCartGuest} from '../../actions'
+
+import { getProductDetail } from '../../stores/actions/productActions'
+import { addProductCart, addProductCartGuest } from '../../stores/actions/cartActions'
+import { addReviews } from '../../stores/actions/reviewActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import NavBar from '../../Components/NavBar'
 import Footer from '../../Components/Footer'
@@ -15,6 +19,9 @@ function Product( props ) {
 
   const { match, productDetail, getProductDetail, addProduct, user, addReviews,
     addProductCartGuest}  = props;
+
+console.log(getProductDetail)
+
   const [comment, setComment] = useState('')
   const [score, setScore] = useState(0)
   const [promedio, setPromedio] = useState(0)
@@ -266,11 +273,14 @@ function Product( props ) {
   )
 }
 
-const mapStateToProps = (state) => ({
-  productDetail: state.productDetail,
-  productCart: state.cart,
-  user: state.userLogged,
-})
+const mapStateToProps = (state) => {
+  const { productReducer, cartReducer, userReducer } = state
+  return {
+    productDetail: productReducer.productDetail,
+    productCart: cartReducer.cart,
+    user: userReducer.userLogged,
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {

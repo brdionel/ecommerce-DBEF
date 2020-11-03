@@ -115,8 +115,9 @@ const validate = function(input){
 }
 
 const mapStateToProps = state => {
-return {
-    userLogged: state.userLogged
-}
+    const { userReducer } = state;
+    return {
+        userLogged: userReducer.userLogged
+    }
 }  
 export default connect(mapStateToProps, {})(ContactUs)

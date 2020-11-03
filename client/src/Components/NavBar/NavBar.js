@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { connect } from 'react-redux'
-import { userLogout, getClosedOrdersByUser } from '../../actions'
+// import { userLogout, getClosedOrdersByUser } from '../../actions'
+import { userLogout } from '../../stores/actions/userActions'
+import { getClosedOrdersByUser } from '../../stores/actions/orderActions'
 import styles from './NavBar.module.scss';
 
 function NavBar({ user, userLogout, navSoloBrand, barExtend }) {
@@ -113,9 +115,13 @@ function NavBar({ user, userLogout, navSoloBrand, barExtend }) {
     </nav>
   )
 }
-const mapStateToProps = (state) => ({
-  user: state.userLogged,
-})
+const mapStateToProps = (state) => {
+  const { userReducer } = state
+  
+  return {
+    user: userReducer.userLogged,
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {

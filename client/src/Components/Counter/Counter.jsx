@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { useState } from 'react'
-import { updateCountProductInCart, updateCountProductGuest } from '../../actions'
+import { updateCountProductInCart, updateCountProductGuest } from '../../stores/actions/cartActions'
 
 const Counter = ( props ) => {
   const { idProduct, updateQuantity, quantity, userLogged, productQuantity, updateCountProductGuest } = props;
@@ -60,8 +60,9 @@ const Counter = ( props ) => {
 }
 
 const mapStateToProps = (store) => {
+  const { userReducer } = store;
   return {
-    userLogged: store.userLogged,
+    userLogged: userReducer.userLogged,
   }
 }
 

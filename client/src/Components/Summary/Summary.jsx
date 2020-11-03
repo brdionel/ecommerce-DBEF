@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import swal from 'sweetalert'
-import { cleanOrder, clearCartLocalS } from '../../actions'
+import { cleanOrder, clearCartLocalS } from '../../stores/actions/cartActions'
 import { useHistory } from 'react-router-dom'
 
 const Summary = (props) => {
@@ -88,10 +88,11 @@ const Summary = (props) => {
 }
 
 const mapStateToProps = (store) => {
+  const { cartReducer, userReducer } = store;
   return {
-    products: store.cart,
-    productsGuest: store.cartGuest,
-    userLogged: store.userLogged,
+    products: cartReducer.cart,
+    productsGuest: cartReducer.cartGuest,
+    userLogged: userReducer.userLogged,
   }
 }
 

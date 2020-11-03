@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Counter from '../Counter/Counter'
 import swal from 'sweetalert'
 import { getProductsCart, deleteProductInCart, deleteProductCartGuest, setProductsUser,
-  getCartLS } from '../../actions'
+  getCartLS } from '../../stores/actions/cartActions'
 
 const Shopping = ( props ) => {
 
@@ -133,10 +133,11 @@ const Shopping = ( props ) => {
 }
 
 const mapStateToProps = (store) => {
+  const { userReducer, cartReducer} = store;
   return {
-    products: store.cart,
-    productsGuest: store.cartGuest,
-    userLogged: store.userLogged,
+    products: cartReducer.cart,
+    productsGuest: cartReducer.cartGuest,
+    userLogged: userReducer.userLogged,
   }
 }
 

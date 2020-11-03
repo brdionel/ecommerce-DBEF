@@ -6,7 +6,7 @@ import {
   deleteUser,
   updateUserLogged,
   userLogout,
-} from '../../actions'
+} from '../../stores/actions/userActions'
 import swal from 'sweetalert'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
@@ -299,10 +299,14 @@ function FormUsuario({
     </div>
   )
 }
-const mapStateToProps = (state) => ({
-  users: state.users,
-  user: state.userLogged,
-})
+const mapStateToProps = (state) => {
+  const { userReducer } = state;
+  return {
+    users: userReducer.users,
+    user: userReducer.userLogged,
+  }
+}
+
 
 const mapDispatchToProps = (dispatch) => {
   return {

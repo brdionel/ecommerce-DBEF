@@ -1,10 +1,11 @@
 import React from 'react'
 import ProductCard from '../ProductCard'
 import { connect } from 'react-redux'
+import styles from './ProductsCards.module.scss'
 
 const ProductsCards = ({ products }) => (
-  <div>
-    {!products[0]? (
+  <div className = {styles.wrapper}>
+    {products && !products[0]? (
       <div className='alert alert-success bg-danger text-center' role='alert'>
         <h4 className='alert-heading text-white'>
           No hay productos para mostrar
@@ -12,7 +13,7 @@ const ProductsCards = ({ products }) => (
       </div>
     ) : (
       <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 justify-content-center'>
-        { products.map( p => (
+        { products && products.map( p => (
             <ProductCard
               key={p.id}
               id={p.id}
@@ -27,7 +28,11 @@ const ProductsCards = ({ products }) => (
   </div>
 )
 
-const mapStateToProps = (state) => ({
-  products: state.products,
-})
+const mapStateToProps = (state) => {
+  const { productReducer } = state;
+  return {
+    products: productReducer.products,
+  }
+}
+
 export default connect(mapStateToProps, {})(ProductsCards)

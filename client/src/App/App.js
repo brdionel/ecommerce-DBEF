@@ -20,7 +20,8 @@ import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import ResetPasswordForm from '../Components/ResetPassword/ResetPasswordForm/ResetPasswordForm'
 import Email from '../Components/Checkout'
-import { userLoginLS } from '../actions/index'
+// import { userLoginLS } from '../actions/index'
+import { userLoginLS } from '../../src/stores/actions/userActions'
 
 library.add(fab, faCheckSquare, faCoffee, fas)
 

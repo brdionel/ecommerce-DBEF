@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { validate } from './validate'
 import '../StyleForm.css'
 import { connect } from 'react-redux'
-import { addProduct, removeProduct } from '../../actions'
+import { addProduct, removeProduct } from '../../stores/actions/productActions'
 import { FormImage } from '../FormImage/FormImage'
 import { useHistory } from 'react-router-dom'
 
@@ -274,11 +274,15 @@ export function FormProduct({ match, addProduct, removeProduct, userLogged }) {
 	)
 }
 
-const mapStateToProps = (state) => ({
-	products: state.products,
-	categories: state.categories,
-	userLogged : state.userLogged
-})
+const mapStateToProps = (state) => {
+	const { productReducer, categoryReducer, userReducer } = state;
+
+	return {
+		products: productReducer.products,
+		categories: categoryReducer.categories,
+		userLogged : userReducer.userLogged
+	}
+}
 
 const mapDispatchToProps = (dispatch) => {
 	return {

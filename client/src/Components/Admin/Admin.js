@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import "../StyleForm.css";
-import {getUsers, getClosedOrders} from '../../actions'
+// import {getUsers, getClosedOrders} from '../../actions'
+import { getClosedOrders } from '../../stores/actions/orderActions'
+import { getUsers } from '../../stores/actions/userActions'
 import { connect } from "react-redux";
 
 export function Admin( {getClosedOrders, getUsers} ){

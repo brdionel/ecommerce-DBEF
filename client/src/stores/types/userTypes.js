@@ -1,0 +1,13 @@
+export const GET_USERS = 'GET_USERS'; 
+export const GET_USER_DETAIL = 'GET_USER_DETAIL';
+export const ADD_USER = 'ADD_USER';
+export const REMOVE_USER = 'REMOVE_USER';
+export const PROMOTE_TO_ADMIN = 'PROMOTE_TO_ADMIN';
+export const RESET_PASSWORD = 'RESET_PASSWORD';
+export const USER_LOGGED = 'USER_LOGGED';
+export const USER_LOGOUT = 'USER_LOGOUT';
+export const USER_CHANGE_PASSWORD = 'USER_CHANGE_PASSWORD';
+export const GET_USER_LOGGED = 'GET_USER_LOGGED';
+export const DELETE_USER = 'DELETE_USER';
+export const UPDATE_USER_LOGGED = 'UPDATE_USER_LOGGED';
+export const USER_LOGGED_LS = 'USER_LOGGED_LS';

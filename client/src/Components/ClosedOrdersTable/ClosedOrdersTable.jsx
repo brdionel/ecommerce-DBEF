@@ -14,7 +14,7 @@ import {
   orderStateChange,
   getClosedOrdersByUser,
   getDispatchedOrders,
-} from '../../actions/index'
+} from '../../stores/actions/orderActions'
 import moment from 'moment'
 
 function ClosedOrdersTable({
@@ -241,11 +241,15 @@ function ClosedOrdersTable({
   )
 }
 
-const mapStateToProps = (state) => ({
-  allOrders: state.allOrders,
-  orderDetail: state.orderDetail,
-  user : state.userLogged
-})
+const mapStateToProps = (state) => {
+  const { userReducer , orderReducer } = state;
+  
+  return {
+    allOrders: orderReducer.allOrders,
+    orderDetail: orderReducer.orderDetail,
+    user : userReducer.userLogged
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
