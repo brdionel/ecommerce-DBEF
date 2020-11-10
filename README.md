@@ -21,7 +21,7 @@ BACK-END
 - Postrges
 - Passport (Autenticación)
 
-### DEMO
+## Demo
 
 ![wJFNTikPMD](https://user-images.githubusercontent.com/43286646/97663222-c5ec3280-1a57-11eb-8129-d3b50699faae.gif)
 
