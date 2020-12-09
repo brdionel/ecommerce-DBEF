@@ -19,8 +19,12 @@ function SearchBar() {
   }
   
   const handleClick = () => {
-    history.push(`/?search=${productSearch}`)
-    setProductSearch('');
+    console.log(productSearch.length)
+    console.log(!productSearch.length)
+    if(productSearch.length){
+      history.push(`/?search=${productSearch}`)
+      setProductSearch('');
+    }
 	}
 
 	return (
