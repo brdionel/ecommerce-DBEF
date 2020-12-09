@@ -24,6 +24,7 @@ function productreducer ( state = initial_state, action) {
            
         
         case REMOVE_PRODUCT:
+            console.log('llega al reducer')
             return {
                 ...state,
                 producs: state.products.filter(

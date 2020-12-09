@@ -8,14 +8,18 @@ const path = require('path')
 const { v4: uuidv4 } = require('uuid')
 var passport = require('passport')
 var Strategy = require('passport-local').Strategy
+
 var db = require('./db.js')
 const bcrypt = require('bcrypt')
 
 const server = express()
 server.name = 'API'
 
+// passport
+
 passport.use(
 	new Strategy(function (username, password, done) {
+		console.log('username es: '+username)
 		db.User.findOne({
 			where: { email: username },
 		}).then((user) => {
@@ -49,6 +53,7 @@ passport.deserializeUser(function (id, done) {
 		})
 })
 
+// middlewares
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }))
 server.use(bodyParser.json({ limit: '50mb' }))
 server.use(cookieParser())
@@ -113,7 +118,6 @@ server.post('/login', function (req, res, next) {
 				errot: true,
 				message: err
 			})
-
         }
         if (!user) {
             return res.status(401).json({

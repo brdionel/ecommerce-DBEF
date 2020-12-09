@@ -11,6 +11,7 @@ export function getProducts() {
         })
         .then((res) => res.json())
         .then((products) => {
+          console.log('la rta del product es:'+ JSON.stringify(products))
           dispatch({
             type: YA_CARGADO
           }) 
@@ -105,23 +106,24 @@ export function addProduct(product) {
 }
   
 export function removeProduct(id) {
-    return function (dispatch) {
-        fetch(`http://localhost:3002/products/${id}`, {
-            method: 'DELETE',
-            credentials: 'include',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-        })
-        .then((res) => res.json())
-        .then((product) => {
-            dispatch({
-                type: REMOVE_PRODUCT,
-                payload: product.id,
-            })
-            console.log('Se elimino el producto correctamente', '', 'success')
-        })
-        .catch((err) => console.log(err))
-    }
+  return function (dispatch) {
+    dispatch({
+      type: REMOVE_PRODUCT,
+      payload: id,
+    })
+      fetch(`http://localhost:3002/products/${id}`, {
+        method: 'DELETE',
+        credentials: 'include',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+      })
+      .then((res) => res.json())
+      .then((product) => {
+          
+          console.log('Se elimino el producto correctamente', '', 'success')
+      })
+      .catch((err) => console.log(err))
+  }
 }

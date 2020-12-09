@@ -12,9 +12,18 @@ a:hover {
 
 .cardProduct{
   background-color: $primary;
-  
+  width: 264px;
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+  }
   &:hover {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     transform: scale(1.05);
   }
+}
+
+.details h3, .details h6, .details p {
+  text-align: left;
 }

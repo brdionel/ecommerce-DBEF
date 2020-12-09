@@ -131,6 +131,7 @@ export function getUsers() {
   }
 
   export function userLogin(input) {
+    console.log('a userLOgin llega: '+ JSON.stringify(input))
     return function (dispatch) {
       return fetch(`http://localhost:3002/login`, {
         method: 'POST',

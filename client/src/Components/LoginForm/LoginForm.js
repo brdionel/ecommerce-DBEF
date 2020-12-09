@@ -21,6 +21,7 @@ function LoginForm({ userLogin, user, setProductsUser, cartGuest }) {
 
   const handleSubmit = function (e) {
     e.preventDefault()
+    console.log('envio datos: '+ JSON.stringify(input))
     userLogin(input)
       .then((res) => {
         if (res.success) {

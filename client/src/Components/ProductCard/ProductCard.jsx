@@ -8,15 +8,14 @@ const ProductCard = ({ id, name, price, image, description }) => (
         <Link to={`products/${id}`}>
           <div>
             <img
-              style={{ height: '220px' }}
               className='card-img-top img-fluid bg-light'
               src={`http://localhost:3002/images/${image[0]}`}
               alt=''
             />
           </div>
 
-          <div className='card-body text-center text-light'>
-            <h4 className='card-title'>${price}</h4>
+          <div className={`card-body text-center text-light ${styles.details}`}>
+            <h3 className='card-title'>${price}</h3>
             <h6 className='lead'>{name}</h6>
             <p className='card-text'>{description.slice(0, 40) + '...'}</p>
           </div>

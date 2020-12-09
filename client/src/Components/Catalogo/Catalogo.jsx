@@ -18,11 +18,15 @@ function Catalogo(props) {
   const nameCategory = match.params.name
 
   useEffect(() => {
+    console.log('se ejecuta este useEffect')
     if (nameCategory) {
+      console.log('primer if')
       getProductsByCategory(nameCategory)
     } else if (searchProduct) {
+      console.log('segundo if')
       getProductsBySearch(searchProduct) 
     } else {
+      console.log('tercer if')
       load()
       setTimeout(() => {
         getProducts()
@@ -44,6 +48,7 @@ function Catalogo(props) {
         <Categorias />
       </div>
       {console.log('isloading: '+isLoading)}
+      {console.log('aqui products es: '+ JSON.stringify(products))}
 
       {
         isLoading? 
