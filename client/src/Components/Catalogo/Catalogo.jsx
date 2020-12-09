@@ -14,26 +14,22 @@ function Catalogo(props) {
   const { match, location, getProducts, getCategories, getProductsByCategory, getProductsBySearch, 
     userLoginLS, isLoading, load, products } = props;
   
-  console.log(location.search)
-  const searchProduct = location.search
-  const nameCategory = match.params.name
+  
+  // const [searchProduct, setSearchProduct] = useState(location.search)
+  // const [nameCategory, setNameCategory] = useState(match.params.name)
+  // console.log('searchProduct: '+ JSON.stringify(searchProduct));
+  // console.log('nameCategory: '+ JSON.stringify(nameCategory));
 
   useEffect(() => {
-    console.log('se ejecuta este useEffect')
-    if (nameCategory) {
-      console.log('primer if')
-      getProductsByCategory(nameCategory)
-    } else if (searchProduct) {
+    if (match.params.name) {
+      getProductsByCategory(match.params.name)
+    } else if (location.search) {
       console.log('segundo if')
-      getProductsBySearch(searchProduct) 
+      getProductsBySearch(location.search) 
     } else {
-      console.log('tercer if')
-      load()
-      setTimeout(() => {
-        getProducts()
-      }, 3000)
+      getProducts()
     }
-  }, [nameCategory, searchProduct])
+  }, [match.params.name, location.search])
 
   useEffect(() => {
     if (localStorage.getItem('userLogged')) {

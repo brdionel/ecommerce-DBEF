@@ -1,0 +1,27 @@
+.wrapper {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  & span{
+    position: absolute;
+    right: 1em;
+    cursor: pointer;
+  }
+}
+
+.input{
+  border: none;
+  height: 48px;
+  line-height: 48px;
+  outline: 0;
+  outline-color: #fff;
+  
+  &::webkit-input-placeholder{
+    color: #000
+   }
+}
