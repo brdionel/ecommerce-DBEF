@@ -8,7 +8,6 @@ const path = require('path')
 const { v4: uuidv4 } = require('uuid')
 var passport = require('passport')
 var Strategy = require('passport-local').Strategy
-
 var db = require('./db.js')
 const bcrypt = require('bcrypt')
 
