@@ -7,6 +7,7 @@ import { getCategories } from '../../stores/actions/categoryActions';
 import { userLoginLS } from '../../stores/actions/userActions';
 import { load } from '../../stores/actions/generalActions';
 import styles from './Catalogo.module.scss';
+import Frame from '../Frame'
 
 
 function Catalogo(props) {
@@ -45,7 +46,9 @@ function Catalogo(props) {
   return (
     <>
       <div className='bg-dark'>
-        <Categorias />
+        <Frame>
+          <Categorias />
+        </Frame>
       </div>
       {console.log('isloading: '+isLoading)}
       {console.log('aqui products es: '+ JSON.stringify(products))}

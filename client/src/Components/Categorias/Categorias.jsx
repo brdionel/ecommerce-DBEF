@@ -6,7 +6,7 @@ import styles from './Categorias.module.scss';
 
 const Categorias = ({ categories }) => (
   <>
-    <ul className='nav p-3 mb-5 justify-content-around'>
+    <ul className='nav py-3 mb-5 justify-content-between'>
       <Dropdown 
         categories = {categories}
       />
