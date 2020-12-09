@@ -19,7 +19,8 @@ function SearchBar() {
   }
   
   const handleClick = () => {
-		history.push(`/?search=${productSearch}`)
+    history.push(`/?search=${productSearch}`)
+    setProductSearch('');
 	}
 
 	return (
